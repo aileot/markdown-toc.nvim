@@ -147,6 +147,10 @@ function M.gen_toc_list(start_from)
 
     marker_index = (marker_index - 1) % #markers + 1
     local marker = markers[marker_index]
+
+    -- Strip links in heading.
+    name = name:gsub("%[(.-)%]%b()", "%1")
+
     local link = M.link_formatters.gfm(all_heading_links, name)
     local fmt_info = {
       name = name,
