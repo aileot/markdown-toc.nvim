@@ -10,8 +10,8 @@ M.link_formatters = {}
 function M.link_formatters.gfm(existing_headings, heading)
   heading = heading:lower()
 
-  -- Strip leading and trailing underscores
-  heading = heading:gsub("^_+", ""):gsub("_+$", "")
+  -- Strip underscores
+  heading = heading:gsub("_", "")
 
   -- Strip non-alphanumric non-latin-extended, and non-CJK characters.
   -- Lua doesn't handle unicode very well.
